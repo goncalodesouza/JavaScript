@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var idade = Number(prompt("Digite a sua idade: "));
+      var nota = Number(prompt("Digite a sua nota: "));
+      var pelomenos18mais10 = idade >= 18 && nota >= 10;
+      var menos18menos10 = idade < 18 || nota < 10;
+      var diferente10 = !(nota >= 10);
+      var entre10e20 = nota >= 10 && nota <= 20;
+      alert(pelomenos18mais10);
+      alert(menos18menos10);
+      alert(diferente10);
+      alert(entre10e20);
+    </script>
+  </body>
+</html>
