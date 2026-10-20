@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="texto">Primeiro parágrafo</p>
+    <p class="texto">Segundo parágrafo</p>
+    <p class="texto">Terceiro parágrafo</p>
+
+    <h1 id="resultado">Aguardando alteração</h1>
+
+    <script>
+      var t = window.document.getElementsByClassName("texto");
+      t[0].style.color = "blue";
+      t[1].style.color = "blue";
+      t[2].style.color = "blue";
+      var r = window.document.getElementById("resultado");
+      r.innerText = "Os parágrafos foram selecionados!";
+    </script>
+  </body>
+</html>

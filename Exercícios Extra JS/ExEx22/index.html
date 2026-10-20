@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="titulo">Painel inicial</h1>
+
+    <p class="mensagem">Mensagem 1</p>
+    <p class="mensagem">Mensagem 2</p>
+    <p class="mensagem">Mensagem 3</p>
+
+    <div id="estado">Estado: desligado</div>
+
+    <script>
+      var t = window.document.getElementById("titulo");
+      t.innerText = "Painel de controlo";
+      var m = window.document.getElementsByClassName("mensagem");
+      m[0].style.color = "purple";
+      m[0].innerText = "Sistema iniciado com sucesso!";
+      m[1].style.color = "purple";
+      m[2].style.color = "purple";
+      var e = window.document.getElementById("estado");
+      e.innerText = "Estado: ligado";
+      var p = window.document.getElementsByTagName("p").length;
+    </script>
+  </body>
+</html>

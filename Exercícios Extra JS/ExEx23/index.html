@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="titulo">Loja online</h1>
+
+    <p class="produto">Teclado — indisponível</p>
+    <p class="produto">Rato — indisponível</p>
+    <p class="produto">Monitor — indisponível</p>
+    <p class="produto">Headset — indisponível</p>
+
+    <div id="resumo">Produtos: por atualizar</div>
+
+    <script>
+      var t = window.document.getElementById("titulo");
+      t.innerText = "Estado dos produtos";
+      var p = window.document.getElementsByClassName("produto");
+      p[0].style.color = "green";
+      p[0].innerText = "Teclado — disponível";
+      p[1].style.color = "green";
+      p[2].style.color = "green";
+      p[2].innerText = "Monitor — disponível";
+      p[3].style.color = "green";
+      var r = window.document.getElementById("resumo");
+      r.innerText = "Produtos: 2 atualizados";
+      var quantidadeParagrafos =
+        window.document.getElementsByTagName("p").length;
+    </script>
+  </body>
+</html>

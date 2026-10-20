@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="titulo">A minha página</h1>
+
+    <p class="info">Primeira informação</p>
+    <p class="info">Segunda informação</p>
+
+    <div id="caixa">Conteúdo original</div>
+
+    <script>
+      var t = window.document.getElementById("titulo");
+      t.innerText = "Prática de DOM";
+      var i = window.document.getElementsByClassName("info");
+      i[0].style.color = "green";
+      i[1].style.color = "green";
+      var c = window.document.getElementById("caixa");
+      c.innerText = "Conteúdo atualizado com JavaScript";
+      var p = window.document.getElementsByTagName("p").length;
+    </script>
+  </body>
+</html>
