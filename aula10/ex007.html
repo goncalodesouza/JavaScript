@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soma de números</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #calc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px 20px 20px;
+        background-color: rgb(88, 0, 0);
+        border-radius: 20px;
+        gap: 10px;
+      }
+      h1 {
+        color: whitesmoke;
+        font-size: 2.5em;
+      }
+      input {
+        font-size: 1.5em;
+        border-radius: 12px;
+        border: 3px solid rgb(55, 0, 0);
+        background-color: rgb(66, 0, 0);
+        color: rgba(150, 0, 0, 0.8);
+        font-weight: bold;
+        text-align: center;
+      }
+      #res {
+        font-size: 1.5em;
+        color: rgb(150, 0, 0);
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calc">
+      <h1>Soma de valores</h1>
+      <input type="number" name="txtn1" id="txtn1" />
+      <input type="number" name="txtn2" id="txtn2" />
+      <input type="button" value="Somar" onclick="somar()" id="botao" />
+      <div id="res">Resultado</div>
+    </div>
+
+    <script>
+      function somar() {
+        var txtn1 = window.document.getElementById("txtn1");
+        var txtn2 = window.document.getElementById("txtn2");
+        var res = window.document.getElementById("res");
+        var n1 = Number(txtn1.value);
+        var n2 = Number(txtn2.value);
+        var s = n1 + n2;
+        res.innerHTML = `A soma de ${n1} e ${n2} é: ${s}`;
+      }
+    </script>
+  </body>
+</html>
