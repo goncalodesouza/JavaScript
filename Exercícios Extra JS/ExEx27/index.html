@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classificador de notas</title>
+  </head>
+  <body>
+    <h1>Classificador de notas</h1>
+    <input type="number" name="nota" id="nota" />
+    <input type="button" value="Verificar nota" id="verificar" />
+    <div id="res"></div>
+
+    <script>
+      var verif = window.document.getElementById("verificar");
+      verif.addEventListener("click", v);
+      var r = window.document.getElementById("res");
+      function v() {
+        var n = window.document.getElementById("nota");
+        n = Number(n.value);
+        if (n >= 10 && n < 16) {
+          r.innerHTML = "Aprovado.";
+        } else if (n >= 16) {
+          r.innerHTML = "Aprovado, Muito Bom!";
+        } else {
+          r.innerHTML = "Reprovado.";
+        }
+      }
+    </script>
+  </body>
+</html>

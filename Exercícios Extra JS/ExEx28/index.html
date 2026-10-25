@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desconto na loja</title>
+  </head>
+  <body>
+    <h1>Desconto na loja</h1>
+    Valor da compra: <input type="number" name="preco" id="preco" />€. Idade do
+    cliente: <input type="number" name="idade" id="idade" /> anos.
+    <input type="button" value="Verificar Desconto" id="verif-desc" />
+    <div id="res"></div>
+
+    <script>
+      var verDes = window.document.getElementById("verif-desc");
+      verDes.addEventListener("click", vd);
+      var r = window.document.getElementById("res");
+      function vd() {
+        var p = window.document.getElementById("preco");
+        p = Number(p.value);
+        var i = window.document.getElementById("idade");
+        i = Number(i.value);
+
+        if (p >= 100 || i < 18) {
+          r.innerHTML = "Tens direito a um desconto!";
+        } else {
+          r.innerHTML = "Não tens direito a desconto.";
+        }
+      }
+    </script>
+  </body>
+</html>
