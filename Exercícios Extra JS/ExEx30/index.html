@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de dias</title>
+  </head>
+  <body>
+    <h1>Conversor de dias</h1>
+    <input type="number" name="dia" id="dia" />
+    <input type="button" value="Enviar" id="button" />
+    <div id="res"></div>
+    <script>
+      var btn = window.document.getElementById("button");
+      btn.addEventListener("click", enviar);
+      function enviar() {
+        var d = Number(window.document.getElementById("dia").value);
+        var r = window.document.getElementById("res");
+        switch (d) {
+          case 1:
+            r.innerText = "Segunda-feira";
+            break;
+          case 2:
+            r.innerText = "Terça-feira";
+            break;
+          case 3:
+            r.innerText = "Quarta-feira";
+            break;
+          case 4:
+            r.innerText = "Quinta-feira";
+            break;
+          case 5:
+            r.innerText = "Sexta-feira";
+            break;
+          case 6:
+            r.innerText = "Sábado";
+            break;
+          case 7:
+            r.innerText = "Domingo";
+            break;
+          default:
+            r.innerText = "Dia inválido!";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

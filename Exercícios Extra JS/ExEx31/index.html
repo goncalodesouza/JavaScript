@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de encomendas</title>
+  </head>
+  <body>
+    <h1>Sistema de encomendas</h1>
+    <label for="numero">Código da encomenda</label>
+    <input type="number" name="numero" id="numero" />
+    <label for="codigo">Tem código de rastreio?</label>
+    <select name="codigo" id="codigo">
+      <option value="S">Sim</option>
+      <option value="N">Não</option>
+    </select>
+    <input type="button" value="Consultar" id="button" />
+    <div id="resultado"></div>
+
+    <script>
+      var btn = window.document.getElementById("button");
+      btn.addEventListener("click", consult);
+      function consult() {
+        var n = Number(window.document.getElementById("numero").value);
+        var r = window.document.getElementById("resultado");
+        var cr = window.document.getElementById("codigo");
+        switch (n) {
+          case 1:
+            r.innerText = "A aguardar pagamento";
+            break;
+          case 2:
+            r.innerText = "Pagamento confirmado";
+            break;
+          case 3:
+            r.innerText = "Em preparação";
+            break;
+          case 4:
+            if (cr.value === "S") {
+              r.innerText = "Encomenda enviada — rastreio disponível";
+            } else {
+              r.innerText = "Encomenda enviada — rastreio indisponível";
+            }
+            break;
+          default:
+            r.innerText = "Estado desconhecido ";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
