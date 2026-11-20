@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soma Acumulada de 1 até N com while</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      input {
+        font-size: 1.5em;
+        padding: 15px;
+        border-radius: 50px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Soma Acumulada de 1 até N com while</h1>
+    <input type="number" name="number" id="numero" />
+    <input type="button" value="Calcular soma" id="button" />
+    <div id="res"></div>
+
+    <script>
+      let btn = window.document.getElementById("button");
+      btn.addEventListener("click", somar);
+      function somar() {
+        let r = window.document.getElementById("res");
+        let n = Number(window.document.getElementById("numero").value);
+        let c = 1;
+        let total = 0;
+        if (n <= 0 || Number.isNaN(n)) {
+          r.innerText = "[ERROR]";
+          return;
+        }
+        while (c <= n) {
+          total = total + c;
+          c = c + 1;
+        }
+        r.innerText = `O resultado da soma dos números inteiros de 1 até ${n} é igual a ${total}`;
+      }
+    </script>
+  </body>
+</html>

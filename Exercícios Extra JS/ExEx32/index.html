@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repetir uma Mensagem com while</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      input {
+        padding: 10px;
+        border-radius: 20px;
+        border: 3px solid red;
+        font-size: 1.3em;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Repetir uma Mensagem com while</h1>
+    <input
+      type="text"
+      name="msg-rep"
+      id="mensagem"
+      placeholder="O que queres repetir..."
+    />
+    <input
+      type="number"
+      name="n-rep"
+      id="numero"
+      placeholder="Quantas vezes repetir..."
+    />
+    <input type="button" value="Repetir" id="button" />
+    <div id="res"></div>
+
+    <script>
+      let btn = window.document.getElementById("button");
+      btn.addEventListener("click", rep);
+      function rep() {
+        let msg = window.document.getElementById("mensagem").value;
+        let n = Number(window.document.getElementById("numero").value);
+        let r = window.document.getElementById("res");
+        let c = 1;
+        let texto = "";
+        while (c <= n) {
+          texto = texto + msg + "\n";
+          c = c + 1;
+        }
+        r.innerText = texto;
+      }
+    </script>
+  </body>
+</html>

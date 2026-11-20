@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contar e Somar Números Pares de 1 até N com while</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      input {
+        font-size: 1.3em;
+        padding: 10px;
+        border: 3px solid black;
+        border-radius: 20px;
+      }
+      div {
+        font-size: 1.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contar e Somar Números Pares de 1 até N com while</h1>
+    <input type="number" name="nI" id="numero" />
+    <input type="button" value="Calcular pares" id="button" />
+    <div id="res"></div>
+
+    <script>
+      const btn = window.document.getElementById("button");
+      btn.addEventListener("click", verificar);
+      function verificar() {
+        let r = window.document.getElementById("res");
+        let n = Number(window.document.getElementById("numero").value);
+        if (n <= 0 || Number.isNaN(n)) {
+          r.innerText = "[ERROR] Insere um número válido!";
+          return;
+        }
+        let c = 1;
+        let p = 0;
+        let SP = 0;
+        while (c <= n) {
+          if (c % 2 === 0) {
+            p = p + 1;
+            SP = SP + c;
+          }
+          c++;
+        }
+        r.innerText = `A quantidade de números pares é de ${p}. \nA soma de todos os números pares é de ${SP}`;
+      }
+    </script>
+  </body>
+</html>
