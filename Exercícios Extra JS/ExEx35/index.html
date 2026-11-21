@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem com Passo Definido usando FOR</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      input {
+        font-size: 1.3em;
+        border: 2px solid black;
+        border-radius: 15px;
+        padding: 5px;
+        height: 50px;
+        width: 300px;
+      }
+      input::placeholder {
+        color: black;
+      }
+      #resultado {
+        font-size: 1.5em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contagem com Passo Definido usando FOR</h1>
+    <input type="number" name="inicio" id="i" placeholder="Início..." />
+    <input type="number" name="fim" id="f" placeholder="Fim..." />
+    <input type="number" name="passo" id="p" placeholder="Passo..." />
+    <input type="button" value="Contar" id="button" />
+    <div id="resultado"></div>
+
+    <script>
+      const btn = window.document.getElementById("button");
+      btn.addEventListener("click", confirmar);
+      function confirmar() {
+        const i = Number(window.document.getElementById("i").value);
+        const f = Number(window.document.getElementById("f").value);
+        const p = Number(window.document.getElementById("p").value);
+        const r = window.document.getElementById("resultado");
+        if (p <= 0 || Number.isNaN(i) || Number.isNaN(f) || Number.isNaN(p)) {
+          r.innerText = "[ERROR] Introduz um valor válido!";
+          return;
+        } else if (i > f) {
+          r.innerText = "[ERROR] O valor inicial tem de ser menor que o final!";
+          return;
+        }
+        let seq = "";
+        for (let c = i; c <= f; c += p) {
+          seq = seq + c + "\n";
+        }
+        r.innerText = seq;
+      }
+    </script>
+  </body>
+</html>

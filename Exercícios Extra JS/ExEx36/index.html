@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem Crescente e Decrescente</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: grey;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: lightgrey;
+        border: 3px solid gold;
+        border-radius: 20px;
+        padding: 10px;
+      }
+      h1 {
+        font-size: 2em;
+        font-weight: bolder;
+        color: darkred;
+      }
+      label {
+        font-size: 1.3em;
+        font-weight: bold;
+        text-align: center;
+      }
+      input {
+        align-self: center;
+        justify-self: center;
+        height: 30px;
+        width: 300px;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        padding: 5px;
+      }
+      #resultado {
+        font-size: 1.5em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <h1>Contagem Crescente e Decrescente</h1>
+      <label for="i">Número do início:</label>
+      <input type="number" name="inicio" id="i" />
+      <label for="f">Número do fim:</label>
+      <input type="number" name="fim" id="f" />
+      <label for="p">Número do passo:</label>
+      <input type="number" name="passo" id="p" />
+      <input type="button" value="Gerar contagem" id="button" />
+      <div id="resultado"></div>
+    </div>
+
+    <script>
+      const btn = window.document.getElementById("button");
+      btn.addEventListener("click", gerar);
+      function gerar() {
+        const i = Number(window.document.getElementById("i").value);
+        const f = Number(window.document.getElementById("f").value);
+        const p = Number(window.document.getElementById("p").value);
+        const r = window.document.getElementById("resultado");
+        let seq = "";
+        if (p <= 0 || Number.isNaN(p) || Number.isNaN(i) || Number.isNaN(f)) {
+          r.innerText = "[ERROR] Introduz um valor válido!";
+          return;
+        }
+        if (i <= f) {
+          for (let c = i; c <= f; c += p) {
+            seq = seq + c + "\n";
+          }
+        } else if (i >= f) {
+          for (let c = i; c >= f; c -= p) {
+            seq = seq + c + "\n";
+          }
+        }
+        r.innerText = seq;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contar e Somar Múltiplos num Intervalo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #card {
+        padding: 20px;
+        border: 2px solid gray;
+        border-radius: 25px;
+        background-color: darkgrey;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      h1 {
+        font-size: 2.5em;
+      }
+      label {
+        font-size: 1.5em;
+      }
+      input {
+        font-size: 1.3em;
+        padding: 5px;
+        width: 100%;
+        margin-bottom: 15px;
+        border: 2px solid gray;
+        border-radius: 12px;
+      }
+      #res {
+        font-size: 1.4em;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <h1>Contar e Somar Múltiplos num Intervalo</h1>
+      <label for="inicio">Indique o início da sequência:</label>
+      <input type="number" name="inicio" id="inicio" />
+      <label for="fim">Indique o fim da sequência:</label>
+      <input type="number" name="fim" id="fim" />
+      <label for="mult">Indique o múltiplo da sequência:</label>
+      <input type="number" name="mult" id="mult" />
+      <input type="button" value="Calcular" id="button" />
+      <div id="res"></div>
+    </div>
+
+    <script>
+      const btn = window.document.getElementById("button");
+      btn.addEventListener("click", calcular);
+      function calcular() {
+        const i = Number(window.document.getElementById("inicio").value);
+        const f = Number(window.document.getElementById("fim").value);
+        const m = Number(window.document.getElementById("mult").value);
+        const resultado = window.document.getElementById("res");
+
+        if (
+          m <= 0 ||
+          Number.isNaN(i) ||
+          Number.isNaN(f) ||
+          Number.isNaN(m) ||
+          i > f
+        ) {
+          resultado.innerText = "[ERROR] Introduz um valor válido!";
+          return;
+        }
+        let cont = 0;
+        let soma = 0;
+        for (let c = i; c <= f; c++) {
+          if (c % m === 0) {
+            cont = cont + 1;
+            soma = soma + c;
+          }
+        }
+        if (cont === 0) {
+          resultado.innerText = "Não existem múltiplos na sequência!";
+          return;
+        }
+        resultado.innerText = `A quantidade de múltiplos na sequência é de ${cont}\nA soma dos múltiplos na sequência é de ${soma}`;
+      }
+    </script>
+  </body>
+</html>
