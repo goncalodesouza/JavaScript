@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mostrar o último item de um array</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #141313;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="Verificar" id="button" />
+    <p id="resultado"></p>
+    <script>
+      let itens = ["Caderno", "Caneta", "Mochila"];
+      let btn = document.getElementById("button");
+      btn.addEventListener("click", verificar);
+      function verificar() {
+        let r = document.getElementById("resultado");
+        r.innerText = itens[itens.length - 1];
+      }
+    </script>
+  </body>
+</html>

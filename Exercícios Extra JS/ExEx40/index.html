@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerir itens num array</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #141313;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        padding: 16px;
+      }
+      input,
+      p {
+        margin: 6px;
+        padding: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" name="posicao" id="posicao" min="1" />
+    <input type="button" value="Verificar" id="button" />
+    <input type="text" id="novoItem" placeholder="Novo item..." />
+    <input type="button" value="Adicionar" id="button2" />
+    <p id="resultado"></p>
+
+    <script>
+      let campoNovo = document.getElementById("novoItem");
+      let r = document.getElementById("resultado");
+      let itens = ["Caderno", "Caneta", "Mochila"];
+
+      let btn = document.getElementById("button");
+      btn.addEventListener("click", verificar);
+
+      function verificar() {
+        let n = Number(document.getElementById("posicao").value);
+        if (
+          n <= 0 ||
+          n > itens.length ||
+          Number.isNaN(n) ||
+          !Number.isInteger(n)
+        ) {
+          r.innerText = "Posição inválida";
+        } else {
+          r.innerText = `Posição ${n}: ${itens[n - 1]}`;
+        }
+      }
+
+      let btn2 = document.getElementById("button2");
+      btn2.addEventListener("click", adicionar);
+
+      function adicionar() {
+        let novoItem = campoNovo.value.trim();
+
+        if (novoItem === "") {
+          r.innerText = "Escreve algo primeiro.";
+          return;
+        }
+
+        if (itens.indexOf(novoItem) !== -1) {
+          r.innerText = "Esse item já existe na lista.";
+          return;
+        }
+
+        itens.push(novoItem);
+        campoNovo.value = "";
+        r.innerText = `Adicionado! Total de itens: ${itens.length}`;
+      }
+    </script>
+  </body>
+</html>

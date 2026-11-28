@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mostrar o último item de um array</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 5px;
+        margin: 5px;
+      }
+      body {
+        background-color: #141313;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" name="posicao" id="posicao" min="1" max="3" />
+    <input type="button" value="Verificar" id="button" />
+    <p id="resultado"></p>
+    <script>
+      let itens = ["Caderno", "Caneta", "Mochila"];
+      let btn = document.getElementById("button");
+      btn.addEventListener("click", verificar);
+      function verificar() {
+        let r = document.getElementById("resultado");
+        let n = Number(document.getElementById("posicao").value);
+        if (n <= 0 || n > 3 || Number.isNaN(n) || !Number.isInteger(n)) {
+          r.innerText = "Posição inválida";
+        } else if (n >= 1 && n <= 3) {
+          r.innerText = itens[n - 1];
+        }
+      }
+    </script>
+  </body>
+</html>
